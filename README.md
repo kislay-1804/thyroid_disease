@@ -174,14 +174,6 @@ Thyroid-Disease-Detection-ML-Project/
 4. Web Interface: Provides a user-friendly interface for submitting patient data and receiving predictions.
 5. Logging: Tracks application usage and errors.
 
-# Project Documentation:-
-1. High Level Document: <https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project/blob/main/Project_Documentation/HLD.pdf>
-2. Low Level Document: <https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project/blob/main/Project_Documentation/LLD.pdf>
-3. Architecture Document: <https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project/blob/main/Project_Documentation/Architecture_Document.pdf>
-4. Wireframe Document: <https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project/blob/main/Project_Documentation/Wireframe_Document.pdf>
-5. Detailed Project Report: <https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project/blob/main/Project_Documentation/Detailed_Project_Report.pdf>
-6. Project Demo Video: <https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project/blob/main/Project_Documentation/Project_Demo_Video.mp4>
-
 # Conclusion:-
 1. Overview of Achievements:- The Thyroid Disease Detection project effectively utilized machine learning techniques to enhance the prediction and early diagnosis of thyroid disorders. By integrating data cleaning, feature engineering, and advanced classification algorithms, the project achieved a robust system capable of accurately assessing the risk of thyroid diseases such as hypothyroidism and hyperthyroidism.
 2. Impact on Healthcare:- This project demonstrates the significant potential of machine learning in improving healthcare outcomes. By enabling early detection and personalized treatment strategies, it contributes to better patient care and decision-making processes.
