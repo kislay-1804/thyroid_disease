@@ -196,5 +196,5 @@ PW Skills (https://pwskills.com/) for providing the project base through the Dec
 UCI Machine Learning Repository (https://archive.ics.uci.edu/dataset/102/thyroid+disease) for providing the dataset used in this project.
 
 # Author:-
-Anirban Majumder
-Profile: <https://www.linkedin.com/in/anirban-majumder-49344a288/>
+Kislay Chaturvedi
+Profile: <https://www.linkedin.com/in/kislay-chaturvedi/>
