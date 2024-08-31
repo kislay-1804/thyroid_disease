@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Disease Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, orange, yellow);
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .form-group .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-group .checkbox-group label {
+            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-submit {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: green;
+        }
+
+        .about-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .about-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thyroid Disease Detection</h1>
+    <h2>Fill the details below</h2>
+
+    <form id="thyroidForm">
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="referral_source">Referral Source</label>
+            <select id="referral_source" name="referral_source" required>
+                <option value="SVHC">SVHC</option>
+                <option value="STMW">STMW</option>
+                <option value="SVI">SVI</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="TSH">TSH</label>
+            <input type="number" step="any" id="TSH" name="TSH" required>
+        </div>
+
+        <div class="form-group">
+            <label for="T3">T3</label>
+            <input type="number" step="any" id="T3" name="T3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="TT4">TT4</label>
+            <input type="number" step="any" id="TT4" name="TT4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="T4U">T4U</label>
+            <input type="number" step="any" id="T4U" name="T4U" required>
+        </div>
+
+        <div class="form-group">
+            <label for="FTI">FTI</label>
+            <input type="number" step="any" id="FTI" name="FTI" required>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label><input type="checkbox" name="on_thyroxine"> On Thyroxine</label>
+            <label><input type="checkbox" name="query_on_thyroxine"> Query on Thyroxine</label>
+            <label><input type="checkbox" name="on_antithyroid_medication"> On Antithyroid Medication</label>
+            <label><input type="checkbox" name="sick"> Sick</label>
+            <label><input type="checkbox" name="pregnant"> Pregnant</label>
+            <label><input type="checkbox" name="thyroid_surgery"> Thyroid Surgery</label>
+            <label><input type="checkbox" name="I131_treatment"> I131 Treatment</label>
+            <label><input type="checkbox" name="query_hypothyroid"> Query Hypothyroid</label>
+            <label><input type="checkbox" name="query_hyperthyroid"> Query Hyperthyroid</label>
+            <label><input type="checkbox" name="lithium"> Lithium</label>
+            <label><input type="checkbox" name="goitre"> Goitre</label>
+            <label><input type="checkbox" name="tumor"> Tumor</label>
+            <label><input type="checkbox" name="hypopituitary"> Hypopituitary</label>
+            <label><input type="checkbox" name="psych"> Psych</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <a href="https://www.linkedin.com/in/your-profile/" class="about-link">About</a>
+
+    <script>
+        document.getElementById('thyroidForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = 'Prediction: ' + data.result;
+            })
+            .catch(error => {
+                document.getElementById('result').textContent = 'Error: ' + error.message;
+            });
+        });
+    </script>
+</body>
+</html>
