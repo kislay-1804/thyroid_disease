@@ -152,7 +152,7 @@ Thyroid-Disease-Detection-ML-Project/
 
 # Installation:-
 1. Clone the Repository:
-   git clone https://github.com/ImAni07/Thyroid-Disease-Detection-ML-Project.git
+   git clone https://github.com/kislay-1804/Thyroid-Disease-Detection-ML-Project.git
    cd Thyroid-Disease-Detection-ML-Project
 2. Create and Activate a Virtual Environment:
    python -m venv venv
